@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Homemade+Apple&family=Lumanosimo&family=Playball&family=Poppins:wght@300&family=Silkscreen&family=Tinos&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <section>
+      <div class="main">
+        <div class="card">
+          <h1>WELCOME</h1>
+          <h1 class="heading">Number Guessing Game</h1>
+          <h1 class="rule">Enter number Between 1 to 100</h1>
+          <input class="input" id="inp" placeholder="Enter your Guess." />
+          <button id="btn1" class="btn">Check</button>
+          <p class="result" id="result1"></p>
+        </div>
+      </div>
+    </section>
+    <script>
+      let counter = 1;
+      let button = document.getElementById("btn1");
+      let res = document.getElementById("result1");
+      let inputs = document.getElementById("inp");
+      button.addEventListener("click", myFunction);
+      var a = Math.floor(Math.random() * 100);
+      function myFunction() {
+        let b = document.getElementById("inp").value;
+        b.toString();
+        if(b>0 && b<100){
+        if (a == b) {
+          res.innerHTML = `You Won!!! you guess it in ${counter} tries`;
+        } else if (a < b) {
+          res.innerHTML = "you guess higher. Guess lower";
+        } else {
+          res.innerHTML = "you guess lower. Guess Higher";
+        }
+        if (inputs.value != "") {
+          counter++;
+        }
+       
+      }
+      else{
+        res.innerHTML = "Please Enter Number Between 1 to 100";
+      }
+      if (inputs.value != "") {
+        inputs.value = "";
+      }
+      }
+    </script>
+  </body>
+</html>
