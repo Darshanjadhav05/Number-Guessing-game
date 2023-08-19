@@ -67,3 +67,21 @@ h1{
     font-size: medium;
     margin-top: 10px;
 }
+@media screen and (max-width: 400px)  {
+    .heading{
+        font-size: medium;
+    }
+    .result{
+        text-align: center;
+        position: relative;
+        top: 140px;
+    }
+    .input{
+        position: relative;
+        top: 50px;
+    }
+    .btn{
+        position: relative;
+        top: 50px;
+    }
+}
